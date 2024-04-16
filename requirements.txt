@@ -1,0 +1,8 @@
+# Requirements 
+
+## Python Packages
+The following python packages must be pip installed:
+* tkinter
+* pydub
+* soundfile
+* numpy
