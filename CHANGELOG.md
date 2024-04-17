@@ -4,10 +4,14 @@
 ## [1.0.2] - 2024-04-16
 ### Added
 * Added an Edit branch to make changes.
+* Added final-report.txt.
+* Added more information to the README.md file.
 
 ### Changed
+* Changed formatting for README.md.
 
 ### Fixed
+* Fixed minor errors in README.md.
 
 ## [1.0.1] - 2024-04-16
 ### Added
