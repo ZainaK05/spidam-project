@@ -22,7 +22,7 @@ This progect requires the use of a python compiler. Install the package provided
 ## Usage Guide
 After installing and running the program, upload an audio file using the "load" button. The file will automatically be converted to wav format if it is not already in it. Utilize the other gui buttons to analyze the audio.
 
-## configuration
+## Configuration
 
 
 ## Contributing Guidelines
