@@ -16,5 +16,17 @@ The purpose of this project is to provide a comprehensive and interactive data a
     * Displays models.
     * Reports the difference in RT60 time to reduce maximum voice intelligibility of 0.5 seconds.
 
-## Basic Usage
+## Installation
+This progect requires the use of a python compiler. Install the package provided and run the "gui.py" file to start the analyzer.
+
+## Usage Guide
+After installing and running the program, upload an audio file using the "load" button. The file will automatically be converted to wav format if it is not already in it. Utilize the other gui buttons to analyze the audio.
+
+## configuration
+
+
+## Contributing Guidelines
+
+
+## License
 
