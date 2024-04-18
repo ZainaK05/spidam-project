@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter import filedialog
 import soundfile as sf
+from data_manip import audio_manip
 
 
 # File Converted GUI
@@ -36,8 +37,10 @@ class SpidamApp:
             # File Conversion Check
             if file_format != "wav":
                 self.convert_to_wav(file_path)
+                audio_manip(file_path)
             else:
                 print("File format is already wav.")
+                audio_manip(file_path)
 
     # File Conversion
     def convert_to_wav(self, file_path):
