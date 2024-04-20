@@ -2,7 +2,7 @@ from pydub import AudioSegment
 import os
 
 
-def audio_manip(fname):
+def set_channel(fname):
     file_name = os.path.basename(fname)
     audio = AudioSegment.from_wav(file_name)
     mono_chan = audio.set_channels(1)
