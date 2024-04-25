@@ -2,16 +2,19 @@
 import tkinter as tk
 from tkinter import filedialog
 import soundfile as sf
+# Programming Files
+import data_manip
+import plot
 
 
-# File Converted GUI
+# SPIDAM Application
 class SpidamApp:
     # Application Window
     def __init__(self, root):
         self.root = root
         # Application Title
         self.root.title("Audio Analyzer")
-        # Application Sizing
+        # Application Size
         self.root.geometry("600x400")
         self.create_widgets()
 
@@ -23,17 +26,16 @@ class SpidamApp:
         # Text Line 2, in Red
         self.info_label = tk.Label(self.root, text="If the file is not in WAV format, it will be converted.", fg="red")
         self.info_label.pack()
-        # File Button
+        # Load File Button
         self.load_button = tk.Button(self.root, text="Load Sample File", command=self.load_file)
         self.load_button.pack(pady=10)
-
 
     # Load File
     def load_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.wav *.mp3 *.aac")])
         if file_path:
             file_format = file_path.split(".")[-1]
-            # File Conversion Check
+            # File Conversion Check, If Not Wav, Convert It
             if file_format != "wav":
                 self.convert_to_wav(file_path)
             else:
@@ -46,11 +48,32 @@ class SpidamApp:
             new_file_path = file_path.replace(file_path.split(".")[-1], "wav")
             sf.write(new_file_path, audio, sample_rate)
             print(f"File converted to wav: {new_file_path}")
+
+            # Proceed with Processing Metadata
+            self.process_audio(new_file_path)
         except Exception as e:
+            # Exception Handling
             print(f"Error converting file: {e}")
 
+    # Dialogue for Processing Metadata
+    def process_audio(self, file_path):
+        # Preprocessing
+        print("Processing Metadata... Please Wait...")
+        audio, sample_rate = data_manip.process_audio(file_path)
+        # Show Results of Processing
+        if audio is not None:
+            print("Processing completed successfully.")
+            self.create_plots(audio, sample_rate)
+        else:
+            # Exception Handling
+            print("Error processing audio.")
 
-# Run
+    # Create Plots
+    def create_plots(self, audio, sample_rate):
+        plot.create_plots(audio, sample_rate)
+
+
+# Run Program
 if __name__ == "__main__":
     root = tk.Tk()
     app = SpidamApp(root)
