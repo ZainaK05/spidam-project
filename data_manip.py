@@ -1,4 +1,6 @@
-# File Imports
+# data_manip.py
+
+# Import Files
 import soundfile as sf
 import numpy as np
 
@@ -33,7 +35,17 @@ def remove_metadata(audio):
     return audio
 
 
-# Convert to Mono if Multi
+# Process Audio
+def process_audio(file_path):
+    audio, sample_rate = check_file(file_path)
+    if audio is not None:
+        audio = remove_metadata(audio)
+        audio_mono = convert_to_mono(audio)
+        return audio_mono, sample_rate
+    else:
+        return None, None
+
+
 def convert_to_mono(audio):
     if isinstance(audio, np.ndarray):
         if audio.ndim > 1:
@@ -50,17 +62,7 @@ def convert_to_mono(audio):
             return audio_mono
         else:
             return audio
-    else:
+    else: #
         print("Invalid audio object format, please try again.")
         return None
 
-
-# Process Audio
-def process_audio(file_path):
-    audio, sample_rate = check_file(file_path)
-    if audio is not None:
-        audio = remove_metadata(audio)
-        audio_mono = convert_to_mono(audio)
-        return audio_mono, sample_rate
-    else:
-        return None, None
