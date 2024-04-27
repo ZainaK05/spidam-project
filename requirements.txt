@@ -1,9 +1,15 @@
 # Requirements 
 
+## Applications
+This program requires the use of FFMPEG, which can be downloaded here:
+https://ffmpeg.org/download.html#build-windows
+
 ## Python Packages
 The following python packages must be pip installed:
 * tkinter
+* matplotlib
 * pydub
 * soundfile
 * numpy
 * ffmpeg
+* scipy
