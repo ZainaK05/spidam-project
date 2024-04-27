@@ -6,3 +6,4 @@ The following python packages must be pip installed:
 * pydub
 * soundfile
 * numpy
+* ffmpeg
