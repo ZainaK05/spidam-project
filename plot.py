@@ -41,14 +41,14 @@ def calculate_rt60(times, amplitudes):
     amp_5db_below_max = max_amp - 5
     amp_25db_below_max = max_amp - 25
 
-    # Find time values corresponding to the amplitude thresholds
+    # Find Time Values
     time_5db = times[np.argmax(amplitudes >= amp_5db_below_max)]
     time_25db = times[np.argmax(amplitudes >= amp_25db_below_max)]
 
     # Calculate RT20
     rt20 = time_25db - time_5db
 
-    # Multiply by 3 to get RT60
+    # Multiply by 3 to Get RT60
     rt60 = rt20 * 3
 
     return rt60
@@ -65,19 +65,16 @@ def plot_rt60_curve(freq_bins, audio_fft, band_mask, band_peaks, rt60, title):
     plt.grid(True)
     plt.show()
 
-# Plot Additional (Placeholder)
-def plot_additional(audio, sample_rate):
-    # Calculate some data for the bar graph (example data)
-    x = np.arange(5)
-    y = np.random.randint(1, 10, size=5)
 
-    # Create the bar graph
+# Plot Additional (Spectrogram)
+def plot_additional(audio, sample_rate):
+    # Create the spectrogram
     plt.figure(figsize=(8, 6))
-    plt.bar(x, y)
-    plt.xlabel('Categories')
-    plt.ylabel('Values')
-    plt.title('Bar Graph')
-    plt.grid(True)
+    plt.specgram(audio, Fs=sample_rate)
+    plt.xlabel('Time (s)')
+    plt.ylabel('Frequency (Hz)')
+    plt.title('Spectrogram')
+    plt.colorbar(label='Intensity (dB)')
     plt.show()
 
 
@@ -106,5 +103,3 @@ def plot_combined_rt60(audio, sample_rate, freq_ranges):
     plt.legend()
     plt.grid(True)
     plt.show()
-
-    
