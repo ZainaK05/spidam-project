@@ -45,7 +45,7 @@ def process_audio(file_path):
     else:
         return None, None
 
-
+# Converts to Mono Audio
 def convert_to_mono(audio):
     if isinstance(audio, np.ndarray):
         if audio.ndim > 1:
@@ -62,7 +62,7 @@ def convert_to_mono(audio):
             return audio_mono
         else:
             return audio
-    else: #
+    else: # Error Handling
         print("Invalid audio object format, please try again.")
         return None
 
