@@ -63,8 +63,6 @@
 ### Added
 * Added gui.py to include a gui that allows the user to load a file, then coverts the file to wav format if it is not already formatted.
 * Added requirements.txt.
-  
-### Changed
 
 ### Fixed
 * Fixed minor formatting issues with CHANGELOG.md.
@@ -74,8 +72,6 @@
 * Added a README.md file.
 * Added CHANGELOG.md.
   
-### Changed
-
 ### Fixed
 * Fixed minor formatting issues with the README.md file.
 
