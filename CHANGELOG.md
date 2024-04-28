@@ -4,8 +4,12 @@
 ## Release:
 
 ## [1.0.8] - 2024-04-28
+### Added
+* Added a license.txt file.
+  
 ### Fixed
 * Made small edits to programming files.
+* Edited README.md to move the license.
   
 ## [1.0.7] - 2024-04-27
 ### Added
