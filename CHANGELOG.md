@@ -2,6 +2,11 @@
 > All notable changes will be documented on this file.
 
 ## Release:
+
+## [1.0.8] - 2024-04-28
+### Fixed
+* Made small edits to programming files.
+  
 ## [1.0.7] - 2024-04-27
 ### Added
 * Packaged Files.
